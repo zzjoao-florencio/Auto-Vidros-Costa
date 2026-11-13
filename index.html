@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Kmodu9VtNMzjlNKfItffKTTVf9V2kX9GW/o2TirxEdI='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-FQpMCvaMhLp9+8JwMx2i+JhA1IQW+8003PI6wDsiURc='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#010207">
@@ -32,7 +32,7 @@ section{position:relative;padding:var(--sec) 0;overflow-x:clip}
 section::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at var(--gx,85%) 20%,rgba(20,70,160,.28),transparent 70%)}
 .gl{--gx:12%}
 #pg{position:fixed;left:0;top:0;height:3px;width:0;z-index:150;background:linear-gradient(90deg,var(--b3),var(--gold2));box-shadow:0 0 12px rgba(217,180,94,.6)}
-#sl{position:absolute;left:0;top:0;z-index:0;pointer-events:none;overflow:visible}
+#slw{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:0}#sl{position:absolute;left:0;top:0;pointer-events:none}
 /* tipografia */
 h1,h2,h3{font-family:var(--hd);font-weight:700;color:#fff;letter-spacing:.005em}
 .eb{display:inline-flex;align-items:center;gap:12px;font:700 13px var(--bd);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
@@ -346,7 +346,7 @@ dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(5px)}
 <body>
 <noscript><style>#pre{display:none}.js .rv{opacity:1}</style></noscript>
 <div id="pg" aria-hidden="true"></div>
-<svg id="sl" aria-hidden="true"><path id="slt" fill="none" stroke="#5B8FE0" stroke-opacity=".09" stroke-width="1.4"/><path id="slp" fill="none" stroke="url(#sg)" stroke-width="1.8" stroke-linecap="round" stroke-opacity=".5"/><circle id="slh" r="4" fill="#F3DC9A" opacity="0"/></svg>
+<div id="slw" aria-hidden="true"><svg id="sl" aria-hidden="true"><path id="slt" fill="none" stroke="#5B8FE0" stroke-opacity=".09" stroke-width="1.4"/><path id="slp" fill="none" stroke="url(#sg)" stroke-width="1.8" stroke-linecap="round" stroke-opacity=".5"/><circle id="slh" r="4" fill="#F3DC9A" opacity="0"/></svg></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9E6FF"/><stop offset=".45" stop-color="#3B7DE8"/><stop offset="1" stop-color="#081F52"/></linearGradient>
 <linearGradient id="gs" x1="0" x2="1"><stop offset="0" stop-color="#F3DC9A" stop-opacity="0"/><stop offset=".5" stop-color="#F3DC9A"/><stop offset="1" stop-color="#F3DC9A" stop-opacity="0"/></linearGradient>
@@ -397,11 +397,11 @@ dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(5px)}
 <nav id="menu" aria-label="Menu principal" inert>
 <ol>
 <li style="--i:0"><a class="ml" href="#inicio"><small>01</small>Início</a></li>
-<li style="--i:1"><a class="ml" href="#trabalhos"><small>02</small>Trabalhos</a></li>
-<li style="--i:2"><a class="ml" href="#servicos"><small>03</small>Serviços</a></li>
-<li style="--i:3"><a class="ml" href="#marcas"><small>04</small>Marcas Atendidas</a></li>
-<li style="--i:4"><a class="ml" href="#como-funciona"><small>05</small>Como Funciona</a></li>
-<li style="--i:5"><a class="ml" href="#equipe"><small>06</small>Nossa Equipe</a></li>
+<li style="--i:1"><a class="ml" href="#marcas"><small>02</small>Marcas Atendidas</a></li>
+<li style="--i:2"><a class="ml" href="#trabalhos"><small>03</small>Trabalhos</a></li>
+<li style="--i:3"><a class="ml" href="#equipe"><small>04</small>Nossa Equipe</a></li>
+<li style="--i:4"><a class="ml" href="#servicos"><small>05</small>Serviços</a></li>
+<li style="--i:5"><a class="ml" href="#como-funciona"><small>06</small>Como Funciona</a></li>
 <li style="--i:6"><a class="ml" href="#orcamento"><small>07</small>Orçamento</a></li>
 <li style="--i:7"><a class="ml" href="#perguntas"><small>08</small>Perguntas</a></li>
 </ol>
@@ -455,6 +455,17 @@ dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(5px)}
 
 <div class="dv" aria-hidden="true"><svg viewBox="0 0 76 26"><use href="#orn"/></svg></div>
 
+<section id="equipe"><div class="wrap">
+<div class="sh rv"><span class="eb">Quem atende você</span><h2 class="h2">Nossa <span class="s">equipe</span></h2><p class="sub">Fale direto com quem cuida do seu atendimento na Auto Vidro Costa. Escolha o contato que preferir.</p></div>
+<div class="tgrid">
+<article class="tm fx rv"><div class="av" aria-hidden="true">V</div><div><h3>Vinícius</h3><p class="role">Equipe Auto Vidro Costa</p></div><div class="cl"><a data-wa="generic" data-o="equipe — Vinícius" data-to="5511966239977" target="_blank" rel="noopener noreferrer"><svg class="soc"><use href="#ic-wa"/></svg><span><small>WhatsApp</small>11 96623-9977</span></a><a href="mailto:vinicius.familiacosta@gmail.com"><svg class="soc"><use href="#ic-gm"/></svg><span class="em"><small>E-mail</small>vinicius.familiacosta@gmail.com</span></a></div></article>
+<article class="tm fx rv"><div class="av" aria-hidden="true">C</div><div><h3>Cassio</h3><p class="role">Equipe Auto Vidro Costa</p></div><div class="cl"><a data-wa="generic" data-o="equipe — Cassio" data-to="5511915165309" target="_blank" rel="noopener noreferrer"><svg class="soc"><use href="#ic-wa"/></svg><span><small>WhatsApp</small>11 91516-5309</span></a><a href="mailto:cassioluis937@gmail.com"><svg class="soc"><use href="#ic-gm"/></svg><span class="em"><small>E-mail</small>cassioluis937@gmail.com</span></a></div></article>
+</div>
+<div class="igc fx rv"><svg class="soc"><use href="#ic-ig"/></svg><div><b>@AUTOVIDROS_COSTA</b><span>Acompanhe a Auto Vidro Costa no Instagram.</span></div><a class="btn sm" href="https://www.instagram.com/autovidros_costa/" target="_blank" rel="noopener noreferrer">Abrir Instagram</a></div>
+</div></section>
+
+<div class="dv" aria-hidden="true"><svg viewBox="0 0 76 26"><use href="#orn"/></svg></div>
+
 <section id="servicos"><svg class="dc g" style="right:-5%;top:6%;width:min(520px,60%)" viewBox="0 0 260 150" aria-hidden="true"><use href="#deco-glass"/></svg>
 <div class="wrap">
 <div class="sh rv"><span class="eb">O que fazemos</span><h2 class="h2">Nossos <span class="s">serviços</span></h2><p class="sub">Soluções completas em vidros automotivos, com qualidade e segurança.</p></div>
@@ -483,17 +494,6 @@ dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(5px)}
 <li class="fx rv"><span class="n">04</span><h3>Agende a instalação</h3><p>Após a confirmação da peça e das condições, combinamos o atendimento em um local combinado com você, inclusive em casa.</p></li>
 </ol>
 <p class="small"><strong style="color:#fff">Dois prazos diferentes:</strong> o tempo para obter a peça depende dos fornecedores e vai no orçamento; o tempo de instalação é combinado depois da confirmação da peça.</p></div>
-</div></section>
-
-<div class="dv" aria-hidden="true"><svg viewBox="0 0 76 26"><use href="#orn"/></svg></div>
-
-<section id="equipe"><div class="wrap">
-<div class="sh rv"><span class="eb">Quem atende você</span><h2 class="h2">Nossa <span class="s">equipe</span></h2><p class="sub">Fale direto com quem cuida do seu atendimento na Auto Vidro Costa. Escolha o contato que preferir.</p></div>
-<div class="tgrid">
-<article class="tm fx rv"><div class="av" aria-hidden="true">V</div><div><h3>Vinícius</h3><p class="role">Equipe Auto Vidro Costa</p></div><div class="cl"><a data-wa="generic" data-o="equipe — Vinícius" data-to="5511966239977" target="_blank" rel="noopener noreferrer"><svg class="soc"><use href="#ic-wa"/></svg><span><small>WhatsApp</small>11 96623-9977</span></a><a href="mailto:vinicius.familiacosta@gmail.com"><svg class="soc"><use href="#ic-gm"/></svg><span class="em"><small>E-mail</small>vinicius.familiacosta@gmail.com</span></a></div></article>
-<article class="tm fx rv"><div class="av" aria-hidden="true">C</div><div><h3>Cassio</h3><p class="role">Equipe Auto Vidro Costa</p></div><div class="cl"><a data-wa="generic" data-o="equipe — Cassio" data-to="5511915165309" target="_blank" rel="noopener noreferrer"><svg class="soc"><use href="#ic-wa"/></svg><span><small>WhatsApp</small>11 91516-5309</span></a><a href="mailto:cassioluis937@gmail.com"><svg class="soc"><use href="#ic-gm"/></svg><span class="em"><small>E-mail</small>cassioluis937@gmail.com</span></a></div></article>
-</div>
-<div class="igc fx rv"><svg class="soc"><use href="#ic-ig"/></svg><div><b>@AUTOVIDROS_COSTA</b><span>Acompanhe a Auto Vidro Costa no Instagram.</span></div><a class="btn sm" href="https://www.instagram.com/autovidros_costa/" target="_blank" rel="noopener noreferrer">Abrir Instagram</a></div>
 </div></section>
 
 <div class="dv" aria-hidden="true"><svg viewBox="0 0 76 26"><use href="#orn"/></svg></div>
@@ -545,7 +545,7 @@ dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(5px)}
 <div class="fgrid">
 <div class="fcol"><a class="logo" href="#inicio" aria-label="Auto Vidro Costa — início" style="display:inline-flex"><svg viewBox="0 0 72 48" aria-hidden="true"><use href="#mark"/></svg><span class="wm"><span class="l1">Auto<b>Vidro</b></span><span class="l2">Costa</span></span></a><p style="margin-top:22px">Vidros automotivos com qualidade, segurança e atendimento personalizado. Serviço executado em local combinado com o cliente, com atendimento em casa.</p><p class="tag">vidros com cuidado</p></div>
 <div><h2>Nossa equipe</h2><a data-wa="generic" data-o="rodapé" data-to="5511966239977" target="_blank" rel="noopener noreferrer"><svg class="soc s"><use href="#ic-wa"/></svg>11 96623-9977 — Vinícius</a><a data-wa="generic" data-o="rodapé" data-to="5511915165309" target="_blank" rel="noopener noreferrer"><svg class="soc s"><use href="#ic-wa"/></svg>11 91516-5309 — Cassio</a><a href="mailto:cassioluis937@gmail.com"><svg class="soc s"><use href="#ic-gm"/></svg>cassioluis937@gmail.com</a><a href="mailto:vinicius.familiacosta@gmail.com"><svg class="soc s"><use href="#ic-gm"/></svg>vinicius.familiacosta@gmail.com</a><a href="https://www.instagram.com/autovidros_costa/" target="_blank" rel="noopener noreferrer"><svg class="soc s"><use href="#ic-ig"/></svg>@AUTOVIDROS_COSTA</a></div>
-<div><h2>Navegação</h2><a href="#inicio">Início</a><a href="#trabalhos">Trabalhos</a><a href="#servicos">Serviços</a><a href="#marcas">Marcas Atendidas</a><a href="#como-funciona">Como Funciona</a><a href="#equipe">Nossa Equipe</a><a href="#perguntas">Perguntas</a></div>
+<div><h2>Navegação</h2><a href="#inicio">Início</a><a href="#marcas">Marcas Atendidas</a><a href="#trabalhos">Trabalhos</a><a href="#equipe">Nossa Equipe</a><a href="#servicos">Serviços</a><a href="#como-funciona">Como Funciona</a><a href="#perguntas">Perguntas</a></div>
 <div><h2>Serviços</h2><span class="i">Para-brisas</span><span class="i">Vidros laterais</span><span class="i">Vidros traseiros</span><span class="i">Instalação e troca</span><span class="i">Caminhões, vans e utilitários</span><span class="i">Vidros importados</span></div>
 </div>
 <div class="legal"><button type="button" data-open="d-priv">Política de Privacidade</button><button type="button" data-open="d-cook">Política de Cookies</button><button type="button" data-open="d-terms">Termos de Uso</button><button type="button" data-open="d-pref">Preferências de cookies</button></div>
@@ -643,17 +643,17 @@ function work(i){if(i===cur)return;cur=i;fr.forEach(function(f,k){f.classList.to
 var scr=$("#trabalhos");work(0);
 /* linha animada */
 var sl=$("#sl"),slt=$("#slt"),slp=$("#slp"),slh=$("#slh"),L=0,shown=0,H0=0,W0=0;
-function build(){var W=root.clientWidth,H=document.body.scrollHeight;W0=W;H0=H;sl.setAttribute("width",W);sl.setAttribute("height",H);sl.setAttribute("viewBox","0 0 "+W+" "+H);var m=W<700?.06:.1,step=Math.max(620,Math.min(900,W*.7)),d="M"+(W*.5)+" 0",px=W*.5,py=0,i=0,y=0;while(y<H+step){y+=step;var x=(i%2?m:1-m)*W;d+=" C"+px+" "+(py+step*.55)+" "+x+" "+(y-step*.55)+" "+x+" "+y;px=x;py=y;i++}slt.setAttribute("d",d);slp.setAttribute("d",d);L=slp.getTotalLength();slp.style.strokeDasharray=L;slp.style.strokeDashoffset=L;shown=-1;tick()}
+function build(){var W=root.clientWidth,H=document.body.offsetHeight;W0=W;H0=H;sl.setAttribute("width",W);sl.setAttribute("height",H);sl.setAttribute("viewBox","0 0 "+W+" "+H);var m=W<700?.06:.1,step=Math.max(620,Math.min(900,W*.7)),d="M"+(W*.5)+" 0",px=W*.5,py=0,i=0,y=0;while(y<H+step){y+=step;var x=(i%2?m:1-m)*W;d+=" C"+px+" "+(py+step*.55)+" "+x+" "+(y-step*.55)+" "+x+" "+y;px=x;py=y;i++}slt.setAttribute("d",d);slp.setAttribute("d",d);L=slp.getTotalLength();slp.style.strokeDasharray=L;slp.style.strokeDashoffset=L;shown=-1;tick()}
 /* rolagem */
 var ft=$("footer"),fab=$(".fab"),hd=$("#hd"),pg=$("#pg"),tk=false,tgt=0;
-function tick(){tk=false;var y=scrollY,h=Math.max(1,document.body.scrollHeight-innerHeight);hd.classList.toggle("sc",y>8);pg.style.width=(y/h*100)+"%";
+function tick(){tk=false;var y=scrollY,h=Math.max(1,document.body.offsetHeight-innerHeight);hd.classList.toggle("sc",y>8);pg.style.width=(y/h*100)+"%";
  if(scr){var r=scr.getBoundingClientRect(),tot=r.height-innerHeight,p=Math.min(1,Math.max(0,-r.top/Math.max(1,tot))),n=fr.length,i=Math.min(n-1,Math.floor(p*n));fab.classList.toggle("hid",(r.top<innerHeight*.45&&r.bottom>innerHeight*.55&&innerWidth<1040)||ft.getBoundingClientRect().top<innerHeight*.6);work(i);$("#pb").style.width=((Math.min(1,p)*100)||0)+"%"}
- tgt=Math.min(1,(y+innerHeight*.55)/Math.max(1,document.body.scrollHeight));
+ tgt=Math.min(1,(y+innerHeight*.55)/Math.max(1,document.body.offsetHeight));
  if(Math.abs(tgt-shown)>.0004){shown=shown<0?tgt:shown+(tgt-shown)*.14;slp.style.strokeDashoffset=L*(1-shown);if(L){var pt=slp.getPointAtLength(L*shown);slh.setAttribute("cx",pt.x);slh.setAttribute("cy",pt.y);slh.setAttribute("opacity",shown>.003?.9:0)}tk=true;requestAnimationFrame(tick)}}
 function req(){if(!tk){tk=true;requestAnimationFrame(tick)}}
 addEventListener("scroll",req,{passive:true});
 addEventListener("resize",function(){if(Math.abs(root.clientWidth-W0)>2)build();req()});
-if("ResizeObserver"in window){new ResizeObserver(function(){if(Math.abs(document.body.scrollHeight-H0)>40)build()}).observe(document.body)}
+if("ResizeObserver"in window){new ResizeObserver(function(){if(Math.abs(document.body.offsetHeight-H0)>8)build()}).observe(document.body)}
 build();addEventListener("load",build);
 /* revelar */
 if("IntersectionObserver"in window){var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");ro.unobserve(e.target)}})},{threshold:.1});$$(".rv").forEach(function(n,i){n.style.transitionDelay=(i%3)*80+"ms";ro.observe(n)})}else{$$(".rv").forEach(function(n){n.classList.add("in")})}
